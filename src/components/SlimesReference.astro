@@ -12,6 +12,7 @@ import pattern2jump1 from '../assets/images/pattern2_jump1.png';
 import pattern3jump1 from '../assets/images/pattern3_jump1.png';
 import pattern4jump1 from '../assets/images/pattern4_jump1.png';
 import background from '../assets/background.svg';
+import { lazy } from 'astro:schema';
 ---
 
 <div class="container">
@@ -26,28 +27,22 @@ import background from '../assets/background.svg';
                     <h3><div class="icon debuff-icon"></div>Select Debuff Type</h3>
                     <div class="debuff-icons">
                         <div class="debuff-option fire-icon" data-value="fire1">
-                            <Image class="icon-symbol" src={fire1Icon} layout='fixed' alt="Fire 1 Icon" />
-                            <div class="icon-label">Fire1</div>
+                            <Image class="icon-symbol" src={fire1Icon} alt="Fire 1 Icon" loading="eager"/>
                         </div>
                         <div class="debuff-option fire-icon" data-value="fire2">
-                            <Image class="icon-symbol" src={fire2Icon} layout='constrained' alt="Fire 2 Icon" />
-                            <div class="icon-label">Fire2</div>
+                            <Image class="icon-symbol" src={fire2Icon} alt="Fire 2 Icon" loading="eager" />
                         </div>
                         <div class="debuff-option fire-icon" data-value="fire3">
-                            <Image class="icon-symbol" src={fire3Icon} layout='constrained' alt="Fire 3 Icon" />
-                            <div class="icon-label">Fire3</div>
+                            <Image class="icon-symbol" src={fire3Icon} alt="Fire 3 Icon" loading="eager" />
                         </div>
                         <div class="debuff-option ice-icon" data-value="ice1">
-                            <Image class="icon-symbol" src={ice1Icon} layout='constrained' alt="Ice 1 Icon" />
-                            <div class="icon-label">Ice1</div>
+                            <Image class="icon-symbol" src={ice1Icon} alt="Ice 1 Icon" loading="eager" />
                         </div>
                         <div class="debuff-option ice-icon" data-value="ice2">
-                            <Image class="icon-symbol" src={ice2Icon} layout='constrained' alt="Ice 2 Icon" />
-                            <div class="icon-label">Ice2</div>
+                            <Image class="icon-symbol" src={ice2Icon} alt="Ice 2 Icon" loading="eager"/>
                         </div>
                         <div class="debuff-option ice-icon" data-value="ice3">
-                            <Image class="icon-symbol" src={ice3Icon} layout='constrained' alt="Ice 3 Icon" />
-                            <div class="icon-label">Ice3</div>
+                            <Image class="icon-symbol" src={ice3Icon} alt="Ice 3 Icon" loading="eager"/>
                         </div>
                     </div>
                 </div>
@@ -56,19 +51,19 @@ import background from '../assets/background.svg';
                     <h3><div class="icon slime-icon"></div>Select Slime Pattern</h3>
                     <div class="pattern-grid">
                         <div class="pattern-option" data-value="pattern1">
-                            <Image class="pattern-image" src={pattern1jump1} layout='constrained' alt="Pattern 1" />
+                            <Image class="pattern-image" src={pattern1jump1} alt="Pattern 1"  loading="eager"/>
                             <div class="pattern-label">Pattern 1</div>
                         </div>
                         <div class="pattern-option" data-value="pattern2">
-                            <Image class="pattern-image" src={pattern2jump1} layout='constrained' alt="Pattern 2" />
+                            <Image class="pattern-image" src={pattern2jump1} alt="Pattern 2"  loading="eager"/>
                             <div class="pattern-label">Pattern 2</div>
                         </div>
                         <div class="pattern-option" data-value="pattern3">
-                            <Image class="pattern-image" src={pattern3jump1} layout='constrained' alt="Pattern 3" />
+                            <Image class="pattern-image" src={pattern3jump1} alt="Pattern 3"  loading="eager"/>
                             <div class="pattern-label">Pattern 3</div>
                         </div>
                         <div class="pattern-option" data-value="pattern4">
-                            <Image class="pattern-image" src={pattern4jump1} layout='constrained' alt="Pattern 4" />
+                            <Image class="pattern-image" src={pattern4jump1} alt="Pattern 4"  loading="eager"/>
                             <div class="pattern-label">Pattern 4</div>
                         </div>
                     </div>
@@ -345,9 +340,6 @@ import background from '../assets/background.svg';
             resultsArea.classList.add('active');
             resultsArea.scrollIntoView({ behavior: 'smooth' });
         }
-
-        // Initialize
-        checkSelections();
     </script>
 
 <style>
@@ -481,13 +473,9 @@ import background from '../assets/background.svg';
         }
 
         .debuff-option .icon-symbol {
-            width: 40px;
-            height: 40px;
-            margin-bottom: 5px;
-            background-size: cover;
+            padding: 5% 5%;
             background-position: center;
             background-repeat: no-repeat;
-            border-radius: 8px;
         }
 
         .debuff-option .icon-label {
@@ -507,13 +495,12 @@ import background from '../assets/background.svg';
         .pattern-grid {
             display: flex;
             justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
+            gap: 10px;
+            flex-wrap: nowrap;
         }
 
         .pattern-option {
-            width: 120px;
-            height: 120px;
+            padding: 5% 5%;
             border: 3px solid #ddd;
             border-radius: 15px;
             cursor: pointer;
@@ -542,14 +529,14 @@ import background from '../assets/background.svg';
         }
 
         .pattern-option .pattern-image {
-            width: 60px;
-            height: 60px;
+            padding: 5%;
+            width: 160px;
+            height: 160px;
             background: #f0f0f0;
             border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 8px;
             transition: all 0.3s ease;
             background-size: cover;
             background-position: center;
