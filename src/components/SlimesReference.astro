@@ -1,5 +1,16 @@
 ---
-import astroLogo from '../assets/astro.svg';
+import { Image } from 'astro:assets';
+import fire1Icon from '../assets/images/fire1_icon.png';
+import fire2Icon from '../assets/images/fire2_icon.png';
+import fire3Icon from '../assets/images/fire3_icon.png';
+import ice1Icon from '../assets/images/ice1_icon.png';
+import ice2Icon from '../assets/images/ice2_icon.png';
+import ice3Icon from '../assets/images/ice3_icon.png';
+
+import pattern1jump1 from '../assets/images/pattern1_jump1.png';
+import pattern2jump1 from '../assets/images/pattern2_jump1.png';
+import pattern3jump1 from '../assets/images/pattern3_jump1.png';
+import pattern4jump1 from '../assets/images/pattern4_jump1.png';
 import background from '../assets/background.svg';
 ---
 
@@ -15,27 +26,27 @@ import background from '../assets/background.svg';
                     <h3><div class="icon debuff-icon"></div>Select Debuff Type</h3>
                     <div class="debuff-icons">
                         <div class="debuff-option fire-icon" data-value="fire1">
-                            <div class="icon-symbol" style="background-image: url(../public/ffxiv-ftb-slimes-reference/fire1_icon.png);"></div>
+                            <Image class="icon-symbol" src={fire1Icon} layout='fixed' alt="Fire 1 Icon" />
                             <div class="icon-label">Fire1</div>
                         </div>
                         <div class="debuff-option fire-icon" data-value="fire2">
-                            <div class="icon-symbol" style="background-image: url(../public/ffxiv-ftb-slimes-reference/fire2_icon.png);"></div>
+                            <Image class="icon-symbol" src={fire2Icon} layout='constrained' alt="Fire 2 Icon" />
                             <div class="icon-label">Fire2</div>
                         </div>
                         <div class="debuff-option fire-icon" data-value="fire3">
-                            <div class="icon-symbol" style="background-image: url(../public/ffxiv-ftb-slimes-reference/fire3_icon.png);"></div>
+                            <Image class="icon-symbol" src={fire3Icon} layout='constrained' alt="Fire 3 Icon" />
                             <div class="icon-label">Fire3</div>
                         </div>
                         <div class="debuff-option ice-icon" data-value="ice1">
-                            <div class="icon-symbol" style="background-image: url('../public/ffxiv-ftb-slimes-reference/ice1_icon.png');"></div>
+                            <Image class="icon-symbol" src={ice1Icon} layout='constrained' alt="Ice 1 Icon" />
                             <div class="icon-label">Ice1</div>
                         </div>
                         <div class="debuff-option ice-icon" data-value="ice2">
-                            <div class="icon-symbol" style="background-image: url('../public/ffxiv-ftb-slimes-reference/ice2_icon.png');"></div>
+                            <Image class="icon-symbol" src={ice2Icon} layout='constrained' alt="Ice 2 Icon" />
                             <div class="icon-label">Ice2</div>
                         </div>
                         <div class="debuff-option ice-icon" data-value="ice3">
-                            <div class="icon-symbol" style="background-image: url('../public/ffxiv-ftb-slimes-reference/ice3_icon.png');"></div>
+                            <Image class="icon-symbol" src={ice3Icon} layout='constrained' alt="Ice 3 Icon" />
                             <div class="icon-label">Ice3</div>
                         </div>
                     </div>
@@ -45,19 +56,19 @@ import background from '../assets/background.svg';
                     <h3><div class="icon slime-icon"></div>Select Slime Pattern</h3>
                     <div class="pattern-grid">
                         <div class="pattern-option" data-value="pattern1">
-                            <div class="pattern-image" style="background-image: url('images/pattern1.png');"></div>
+                            <Image class="pattern-image" src={pattern1jump1} layout='constrained' alt="Pattern 1" />
                             <div class="pattern-label">Pattern 1</div>
                         </div>
                         <div class="pattern-option" data-value="pattern2">
-                            <div class="pattern-image" style="background-image: url('images/pattern2.png');"></div>
+                            <Image class="pattern-image" src={pattern2jump1} layout='constrained' alt="Pattern 2" />
                             <div class="pattern-label">Pattern 2</div>
                         </div>
                         <div class="pattern-option" data-value="pattern3">
-                            <div class="pattern-image" style="background-image: url('images/pattern3.png');"></div>
+                            <Image class="pattern-image" src={pattern3jump1} layout='constrained' alt="Pattern 3" />
                             <div class="pattern-label">Pattern 3</div>
                         </div>
                         <div class="pattern-option" data-value="pattern4">
-                            <div class="pattern-image" style="background-image: url('images/pattern4.png');"></div>
+                            <Image class="pattern-image" src={pattern4jump1} layout='constrained' alt="Pattern 4" />
                             <div class="pattern-label">Pattern 4</div>
                         </div>
                     </div>
